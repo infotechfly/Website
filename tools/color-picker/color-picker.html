@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWQW6Z6Z4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BWQW6Z6Z4K');
+    </script>
+    <link rel="icon" href="../../img/Logo.png" type="image/png" />
+    <meta name="description" content="Free Color Picker – pick colors, get HEX, RGB, HSL values, and build palettes instantly." />
+    <meta name="author" content="Info Tech Fly" />
+    <title>Color Picker | Info Tech Fly</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <!-- Tool-specific CSS -->
+    <link rel="stylesheet" href="color-picker.css" />
+</head>
+
+<body class="tools-page">
+
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <div class="logo-circle">
+                    <img src="../../img/Logo.png" alt="Info Tech Fly Logo" />
+                </div>
+                <span>Info Tech <strong>Fly</strong></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../../index.html#training" class="nav-link">Training</a></li>
+                <li><a href="../../index.html#services" class="nav-link">Services</a></li>
+                <li><a href="../../tools.html" class="nav-link">Tools</a></li>
+                <li><a href="../../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="../../enroll.html" class="btn btn-sm btn-primary">Enroll Now</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HERO SECTION ═══════════════════════ -->
+    <section class="cp-hero" id="cpHero">
+        <div class="hero-particles">
+            <span class="particle" style="--x:10%;--y:80%;--s:8px;--d:6s;"></span>
+            <span class="particle" style="--x:25%;--y:20%;--s:6px;--d:8s;"></span>
+            <span class="particle" style="--x:40%;--y:70%;--s:10px;--d:5s;"></span>
+            <span class="particle" style="--x:55%;--y:30%;--s:5px;--d:9s;"></span>
+            <span class="particle" style="--x:70%;--y:60%;--s:7px;--d:7s;"></span>
+            <span class="particle" style="--x:85%;--y:40%;--s:9px;--d:6.5s;"></span>
+            <span class="particle" style="--x:15%;--y:50%;--s:4px;--d:10s;"></span>
+            <span class="particle" style="--x:60%;--y:85%;--s:11px;--d:5.5s;"></span>
+        </div>
+
+        <div class="hero-floating-icons">
+            <i class="fa-solid fa-palette floating-icon" style="--duration:8s; --delay:0s; top:15%; left:10%;"></i>
+            <i class="fa-solid fa-eye-dropper floating-icon" style="--duration:9s; --delay:1s; top:70%; left:85%;"></i>
+            <i class="fa-solid fa-swatchbook floating-icon" style="--duration:7s; --delay:2s; top:80%; left:20%;"></i>
+            <i class="fa-solid fa-fill-drip floating-icon" style="--duration:10s; --delay:0.5s; top:20%; left:80%;"></i>
+            <i class="fa-solid fa-brush floating-icon" style="--duration:6s; --delay:3s; top:50%; left:50%;"></i>
+            <i class="fa-solid fa-wand-magic-sparkles floating-icon" style="--duration:11s; --delay:1.5s; top:60%; left:70%;"></i>
+        </div>
+
+        <div class="container">
+            <div class="cp-hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-palette"></i> Free Online Tool
+                </div>
+                <h1 class="hero-title">
+                    Color <span class="highlight">Picker</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Pick any color, get instant HEX, RGB, and HSL values.
+                    Build palettes, copy codes, and download your favorite shades.
+                </p>
+            </div>
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TOOL SECTION ═══════════════════════ -->
+    <section class="cp-tool-section" id="cpTool">
+        <div class="container">
+            <div class="cp-tool-wrapper">
+
+                <!-- LEFT: Controls -->
+                <div class="cp-controls">
+                    <div class="cp-input-group">
+                        <label for="cpColorInput"><i class="fa-solid fa-eye-dropper"></i> Pick a Color</label>
+                        <div class="cp-color-picker-row">
+                            <input type="color" id="cpColorInput" value="#87CEEB" />
+                            <input type="text" id="cpHexInput" value="#87CEEB" maxlength="7" placeholder="#87CEEB" />
+                            <button id="cpRandomBtn" class="btn btn-primary" title="Random Color"><i class="fa-solid fa-shuffle"></i></button>
+                        </div>
+                        <small class="cp-hint">Click the swatch, type a HEX code, or hit shuffle for a random color.</small>
+                    </div>
+
+                    <!-- Color values -->
+                    <div class="cp-values-grid">
+                        <div class="cp-value-card" data-format="hex">
+                            <span class="cp-value-label">HEX</span>
+                            <span class="cp-value-code" id="cpHexValue">#87CEEB</span>
+                            <button class="cp-copy-btn" data-copy="hex" title="Copy HEX"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <div class="cp-value-card" data-format="rgb">
+                            <span class="cp-value-label">RGB</span>
+                            <span class="cp-value-code" id="cpRgbValue">135, 206, 235</span>
+                            <button class="cp-copy-btn" data-copy="rgb" title="Copy RGB"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <div class="cp-value-card" data-format="hsl">
+                            <span class="cp-value-label">HSL</span>
+                            <span class="cp-value-code" id="cpHslValue">197, 71%, 73%</span>
+                            <button class="cp-copy-btn" data-copy="hsl" title="Copy HSL"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Copy all -->
+                    <button id="cpCopyAllBtn" class="btn btn-outline-copy cp-copy-all-btn">
+                        <i class="fa-regular fa-clipboard"></i> Copy All Values
+                    </button>
+                </div>
+
+                <!-- RIGHT: Preview & Palette -->
+                <div class="cp-display">
+                    <div id="cpPreview" class="cp-preview" style="background-color: #87CEEB;">
+                        <div class="cp-preview-inner">
+                            <i class="fa-solid fa-palette fa-3x"></i>
+                            <span id="cpPreviewText">#87CEEB</span>
+                        </div>
+                    </div>
+
+                    <div class="cp-palette-section">
+                        <div class="cp-palette-header">
+                            <span><i class="fa-solid fa-swatchbook"></i> Saved Palette</span>
+                            <button id="cpClearPaletteBtn" class="cp-clear-btn" title="Clear palette"><i class="fa-solid fa-trash-can"></i> Clear</button>
+                        </div>
+                        <div class="cp-palette" id="cpPalette">
+                            <div class="cp-palette-empty" id="cpPaletteEmpty">
+                                <i class="fa-regular fa-bookmark"></i> Saved colors will appear here
+                            </div>
+                        </div>
+                        <button id="cpSaveColorBtn" class="btn btn-primary cp-save-btn">
+                            <i class="fa-regular fa-bookmark"></i> Save Current Color
+                        </button>
+                    </div>
+
+                    <div id="cpStatus" class="cp-status"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="../../index.html" class="footer-logo">
+                        <div class="logo-circle"><img src="../../img/Logo.png" alt="Info Tech Fly Logo" /></div>
+                        <span>Info Tech <strong>Fly</strong></span>
+                    </a>
+                    <p>Empowering the next generation of tech professionals with industry‑leading training and digital solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#training">Training</a></li>
+                        <li><a href="../../index.html#services">Services</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Training</h4>
+                    <ul>
+                        <li><a href="../../enroll.html">Web Development</a></li>
+                        <li><a href="../../enroll.html">Cyber Security</a></li>
+                        <li><a href="../../enroll.html">Python Programming</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Info Tech Fly</strong>. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tool JS -->
+    <script src="color-picker.js"></script>
+    <!-- Global JS -->
+    <script src="../../js/script.js"></script>
+
+    <!-- ═══ SAFETY NET: Mobile hamburger ═══ -->
+    <script>
+        (function() {
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+            if (hamburger && navMenu) {
+                if (!hamburger._listenerAttached) {
+                    hamburger.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        hamburger.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+                    hamburger._listenerAttached = true;
+                }
+                var navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWQW6Z6Z4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BWQW6Z6Z4K');
+    </script>
+    <link rel="icon" href="img/Logo.png" type="image/png" />
+    <meta name="description" content="Enroll in premium tech training at Info Tech Fly – Web Development, Cyber Security, Python & more. Start your career today." />
+    <meta name="author" content="Info Tech Fly" />
+    <title>Enroll Now | Info Tech Fly</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Global Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Page‑specific styles (navbar untouched) -->
+    <style>
+        body.enroll-page .navbar:not(.scrolled) {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        body.enroll-page .navbar:not(.scrolled) .nav-link {
+            color: var(--gray-700);
+        }
+        body.enroll-page .navbar:not(.scrolled) .nav-logo {
+            color: var(--deep-navy);
+        }
+        body.enroll-page .navbar:not(.scrolled) .nav-logo strong {
+            color: var(--sky-blue);
+        }
+        body.enroll-page .navbar:not(.scrolled) .hamburger span {
+            background: var(--deep-navy);
+        }
+        body.enroll-page .navbar:not(.scrolled) .nav-cta .btn-primary {
+            background: var(--sky-blue);
+            color: var(--deep-navy);
+            border-color: var(--sky-blue);
+        }
+        body.enroll-page .navbar:not(.scrolled) .nav-link:hover,
+        body.enroll-page .navbar:not(.scrolled) .nav-link.active {
+            color: var(--sky-blue-dark);
+        }
+
+        .enroll-main-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--deep-navy-dark) 0%, var(--deep-navy) 100%);
+            padding: 12rem 0 8rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+        .enroll-main-header h1 {
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .enroll-main-header h1 span {
+            color: var(--sky-blue);
+        }
+        .enroll-main-header p {
+            font-size: 1.7rem;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+        }
+        .header-wave svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .enroll-form-wrapper {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+        }
+        .enroll-form-wrapper .form-group select {
+            width: 100%;
+            padding: 1.2rem 1.6rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            background: var(--gray-50);
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.2rem center;
+            background-size: 1.8rem;
+        }
+        .enroll-form-wrapper .form-group select:focus {
+            border-color: var(--sky-blue);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.15);
+        }
+        .enroll-form-wrapper .form-group .radio-group {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .enroll-form-wrapper .form-group .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+        .enroll-form-wrapper .form-group .radio-group input[type="radio"] {
+            width: 1.6rem;
+            height: 1.6rem;
+            accent-color: var(--sky-blue);
+            cursor: pointer;
+        }
+        .enroll-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 4rem;
+        }
+        .enroll-benefits .benefit-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+        .enroll-benefits .benefit-item i {
+            font-size: 2.8rem;
+            color: var(--sky-blue-dark);
+            margin-bottom: 1rem;
+        }
+        .enroll-benefits .benefit-item h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+        .enroll-benefits .benefit-item p {
+            font-size: 1.3rem;
+            color: var(--gray-500);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .enroll-form-wrapper { padding: 2.5rem; }
+            .enroll-form-wrapper .form-group .radio-group { flex-direction: column; gap: 1rem; }
+            .enroll-benefits { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .enroll-benefits { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="enroll-page">
+
+    <!-- ═══════════════════════ NAVIGATION (EXACTLY AS INDEX) ═══════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-circle">
+                    <img src="img/Logo.png" alt="Info Tech Fly Logo" />
+                </div>
+                <span>Info Tech <strong>Fly</strong></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#training" class="nav-link active">Training</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="tools.html" class="nav-link">Tools</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="enroll.html" class="btn btn-sm btn-primary">Enroll Now</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+    <div class="enroll-main-header">
+        <div class="container">
+            <h1>Start Your <span>Tech Journey</span> Today</h1>
+            <p>Choose your program, fill in your details, and take the first step toward a high‑demand career.</p>
+        </div>
+        <div class="header-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ ENROLLMENT SECTION ═══════════════════════ -->
+    <section class="contact" id="enroll" style="padding-top: 5rem;">
+        <div class="container">
+
+            <div class="enroll-benefits">
+                <div class="benefit-item">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <h4>Live Projects</h4>
+                    <p>Build real‑world applications</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Flexible Timings</h4>
+                    <p>Weekend & evening batches</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-certificate"></i>
+                    <h4>Industry Certificate</h4>
+                    <p>Recognized by employers</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h4>Placement Support</h4>
+                    <p>Resume & interview prep</p>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <span class="section-tag">Enroll Now</span>
+                <h2 class="section-title">Secure Your <span class="highlight">Seat</span></h2>
+                <p class="section-desc">
+                    Fill out the form below and we'll get back to you with course details, fee structure, and batch availability.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Call / WhatsApp</h4>
+                            <p>+91 7225880469</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contactinfotechfly@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India — Remote</p>
+                        </div>
+                    </div>
+                    <div class="contact-social" style="background: white; border-radius: var(--radius-md); padding: 2rem; margin-top: 0.5rem;">
+                        <h4 style="color: var(--deep-navy);">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/917225880469" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <p style="font-size: 1.3rem; color: var(--gray-500); margin-top: 1rem;">Questions? Reach out anytime.</p>
+                    </div>
+                </div>
+
+                <div class="enroll-form-wrapper">
+                    <form class="contact-form" id="enrollForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span>*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span>*</span></label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Choose Your Course <span>*</span></label>
+                            <select id="course" name="course" required>
+                                <option value="">— Select a program —</option>
+                                <option value="Web Development">Web Development (Full Stack)</option>
+                                <option value="Cyber Security">Cyber Security (Ethical Hacking)</option>
+                                <option value="Python Programming">Python Programming</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Mode <span>*</span></label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mode" value="Online" checked /> Online</label>
+                                <label><input type="radio" name="mode" value="Offline" /> Offline (Classroom)</label>
+                                <label><input type="radio" name="mode" value="Hybrid" /> Hybrid</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Current Experience Level</label>
+                            <select id="experience" name="experience">
+                                <option value="Beginner">Beginner (No prior coding)</option>
+                                <option value="Intermediate" selected>Intermediate (Some knowledge)</option>
+                                <option value="Advanced">Advanced (Ready for job)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Anything else you'd like us to know?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals, schedule preferences, or specific questions..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fa-brands fa-whatsapp"></i> Send Enrollment Request
+                        </button>
+                        <p style="font-size: 1.2rem; text-align: center; margin-top: 1.5rem; color: var(--gray-500);">
+                            <i class="fa-regular fa-clock"></i> We'll respond within 24 hours
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo" /></div>
+                        <span>Info Tech <strong>Fly</strong></span>
+                    </a>
+                    <p>Empowering the next generation of tech professionals with industry‑leading training and digital solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#training">Training</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="enroll.html">Enroll Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Training</h4>
+                    <ul>
+                        <li><a href="enroll.html">Web Development</a></li>
+                        <li><a href="enroll.html">Cyber Security</a></li>
+                        <li><a href="enroll.html">Python Programming</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Info Tech Fly</strong>. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════ ALL JAVASCRIPT INLINE (FIXED) ═══════════════════════ -->
+    <script>
+        (function() {
+            "use strict";
+
+            // ──────────────────────── NAVBAR SCROLL EFFECT ────────────────────────
+            function initNavbar() {
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // ──────────────────────── TYPING ANIMATION (SAFE) ────────────────────────
+            function initTypingAnimation() {
+                const typingElement = document.getElementById('typingText');
+                if (!typingElement) return; // exit if missing
+
+                const words = [
+                    'Web Development',
+                    'Cyber Security',
+                    'Artificial Intelligence',
+                    'Machine Learning',
+                    'Python Programming',
+                    'Ethical Hacking',
+                    'Full Stack Development',
+                    'Cloud Computing'
+                ];
+
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let typeSpeed = 100;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+
+                    if (isDeleting) {
+                        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                        typeSpeed = 50;
+                    } else {
+                        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                        typeSpeed = 120;
+                    }
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        typeSpeed = 1800;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        typeSpeed = 400;
+                    }
+
+                    setTimeout(type, typeSpeed);
+                }
+
+                setTimeout(type, 3000);
+            }
+
+            // ──────────────────────── SCROLL REVEAL ────────────────────────
+            function initScrollReveal() {
+                const revealElements = document.querySelectorAll(
+                    '.about-card, .training-card, .service-card, .contact-card, .section-header'
+                );
+                revealElements.forEach(el => el.classList.add('reveal'));
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(el => observer.observe(el));
+            }
+
+            // ──────────────────────── CONTACT FORM (enroll) ────────────────────────
+            function initEnrollForm() {
+                const form = document.getElementById('enrollForm');
+                if (!form) return;
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const course = document.getElementById('course').value;
+                    const mode = document.querySelector('input[name="mode"]:checked');
+                    const experience = document.getElementById('experience').value;
+                    const message = document.getElementById('message').value.trim();
+
+                    if (!name || !email || !phone || !course || !mode) {
+                        showFormToast('Please fill in all required fields.', 'error');
+                        return;
+                    }
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                        showFormToast('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    const whatsappMsg = encodeURIComponent(
+                        `🎓 *New Enrollment Request - Info Tech Fly*\n\n` +
+                        `👤 *Full Name:* ${name}\n` +
+                        `📧 *Email:* ${email}\n` +
+                        `📞 *Phone:* ${phone}\n` +
+                        `📚 *Course:* ${course}\n` +
+                        `💻 *Mode:* ${mode.value}\n` +
+                        `📊 *Experience:* ${experience}\n\n` +
+                        `💬 *Additional Info:*\n${message || '—'}\n\n` +
+                        `_Sent via Enrollment Page_`
+                    );
+
+                    const whatsappNumber = '917225880469';
+                    const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + whatsappMsg;
+                    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+                    showFormToast('Enrollment request sent! Opening WhatsApp... ✅', 'success');
+                    form.reset();
+                });
+            }
+
+            // ──────────────────────── TOAST NOTIFICATION ────────────────────────
+            function showFormToast(msg, type) {
+                const existing = document.querySelector('.form-toast');
+                if (existing) existing.remove();
+
+                const toast = document.createElement('div');
+                toast.className = 'form-toast form-toast-' + type;
+                toast.textContent = msg;
+                toast.style.cssText =
+                    'position: fixed; bottom: 30px; right: 30px; padding: 1.4rem 2.4rem; border-radius: 8px; font-size: 1.4rem; font-weight: 600; z-index: 9999; animation: slideInUp 0.4s ease; color: #fff; background: ' +
+                    (type === 'success' ? '#10b981' : '#ef4444') +
+                    '; box-shadow: 0 8px 25px rgba(0,0,0,0.2);';
+                document.body.appendChild(toast);
+
+                setTimeout(function() {
+                    toast.style.opacity = '0';
+                    toast.style.transition = 'opacity 0.4s ease';
+                    setTimeout(function() { toast.remove(); }, 400);
+                }, 3500);
+            }
+
+            // ──────────────────────── MOBILE MENU ────────────────────────
+            function initMobileMenu() {
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('navMenu');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // ──────────────────────── SMOOTH SCROLL ────────────────────────
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const navHeight = document.getElementById('navbar').offsetHeight;
+                            window.scrollTo({
+                                top: target.offsetTop - navHeight - 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            // ──────────────────────── ACTIVE NAV LINK ON SCROLL ────────────────────
+            function initActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                window.addEventListener('scroll', function() {
+                    let current = '';
+                    const scrollPos = window.scrollY + 150;
+
+                    sections.forEach(function(section) {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + current) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // ──────────────────────── PAGE INIT ────────────────────────
+            function init() {
+                // For enroll page, we want the "Training" link active
+                // (it already has class "active" in markup, but we ensure it)
+                const trainingLink = document.querySelector('.nav-link[href="index.html#training"]');
+                if (trainingLink) {
+                    document.querySelectorAll('.nav-link').forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                    trainingLink.classList.add('active');
+                }
+
+                initNavbar();
+                initTypingAnimation();
+                initScrollReveal();
+                initEnrollForm();
+                initMobileMenu();
+                initSmoothScroll();
+                initActiveNavLink();
+
+                console.log('%c🚀 Info Tech Fly %cEnroll Page Ready',
+                    'color: #87CEEB; font-size: 2rem; font-weight: bold;',
+                    'color: #1E3A5F; font-size: 1.4rem;');
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+</body>
+</html>

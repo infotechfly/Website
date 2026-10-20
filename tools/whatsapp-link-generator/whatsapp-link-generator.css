@@ -1,0 +1,502 @@
+/* ───────────── WHATSAPP LINK GENERATOR TOOL ───────────── */
+/* ─── HERO SECTION ─── */
+
+.wa-hero {
+    position: relative;
+    min-height: 60vh;
+    background: linear-gradient(135deg, var(--deep-navy-dark) 0%, var(--deep-navy) 40%, var(--deep-navy-light) 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+}
+
+.wa-hero .hero-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.wa-hero .particle {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--s);
+    height: var(--s);
+    background: rgba(135, 206, 235, 0.25);
+    border-radius: 50%;
+    animation: particleFloat var(--d) ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-30px) scale(1.5); opacity: 0.7; }
+}
+
+.wa-hero .hero-floating-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wa-hero .floating-icon {
+    position: absolute;
+    font-size: 3.2rem;
+    color: var(--sky-blue);
+    opacity: 0.2;
+    animation: floatIcon var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+    filter: drop-shadow(0 0 8px rgba(135, 206, 235, 0.2));
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+    25% { transform: translateY(-20px) translateX(15px) rotate(5deg); }
+    50% { transform: translateY(10px) translateX(-10px) rotate(-5deg); }
+    75% { transform: translateY(-15px) translateX(-20px) rotate(3deg); }
+}
+
+.wa-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 1rem 0;
+}
+
+.wa-hero .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(135, 206, 235, 0.15);
+    color: var(--sky-blue);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.wa-hero .hero-title {
+    font-size: clamp(3.2rem, 5vw, 5.6rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.wa-hero .hero-title .highlight {
+    color: var(--sky-blue);
+}
+
+.wa-hero .hero-subtitle {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.wa-hero .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.wa-hero .hero-wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ─── TOOL SECTION ─── */
+
+.wa-tool-section {
+    padding: 8rem 0 10rem;
+    background: var(--gray-50);
+    min-height: 80vh;
+}
+
+.wa-tool-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: stretch;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 5rem;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--gray-200);
+    border-top: 4px solid var(--sky-blue);   /* Changed from #25D366 to sky-blue */
+    min-height: 550px;
+    transition: border-color 0.3s ease;
+}
+
+.wa-tool-wrapper:hover {
+    border-color: var(--sky-blue-light);
+}
+
+/* Controls */
+.wa-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.wa-input-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--deep-navy);
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.wa-input-group label i {
+    color: var(--sky-blue-dark);   /* Changed from #25D366 */
+    margin-right: 0.6rem;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-with-button input,
+.wa-input-group textarea {
+    flex: 1;
+    padding: 1.4rem 1.8rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    background: var(--gray-50);
+    width: 100%;
+    font-family: inherit;
+}
+
+.input-with-button input:focus,
+.wa-input-group textarea:focus {
+    border-color: var(--sky-blue);        /* Changed from #25D366 */
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.15);
+    outline: none;
+}
+
+.input-with-button .btn {
+    white-space: nowrap;
+    padding: 1.4rem 3rem;
+    border: 2px solid var(--sky-blue);
+    font-weight: 600;
+    background: var(--sky-blue);
+    color: var(--deep-navy);
+}
+
+.input-with-button .btn:hover {
+    background: var(--sky-blue-dark);
+    border-color: var(--sky-blue-dark);
+}
+
+.wa-hint {
+    font-size: 1.2rem;
+    color: var(--gray-500);
+    margin-top: 0.4rem;
+}
+
+.wa-link-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.wa-link-display label {
+    font-weight: 600;
+    color: var(--deep-navy);
+    font-size: 1.5rem;
+}
+
+.wa-link-display label i {
+    color: var(--sky-blue-dark);
+    margin-right: 0.6rem;
+}
+
+.link-box {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.link-box input {
+    flex: 1;
+    padding: 1rem 1.6rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: 1.4rem;
+    background: var(--gray-50);
+    color: var(--deep-navy);
+}
+
+.link-box input:focus {
+    border-color: var(--sky-blue);
+}
+
+.btn-outline-copy {
+    background: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--deep-navy);
+    padding: 0.8rem 1.6rem;
+    font-size: 1.3rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-outline-copy:hover {
+    background: var(--sky-blue);
+    border-color: var(--sky-blue);
+    color: var(--deep-navy);
+}
+
+/* Display */
+.wa-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+#waQRContainer {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 3rem;
+    border: 3px dashed var(--gray-300);
+    text-align: center;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: border-color 0.4s ease, border-style 0.4s ease, box-shadow 0.4s ease;
+    flex: 1;
+}
+
+#waQRContainer.has-qr {
+    border: 3px solid var(--sky-blue);
+    box-shadow: 0 0 0 4px rgba(135, 206, 235, 0.15);
+}
+
+#waQRWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+#waQRCode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#waQRCode img,
+#waQRCode canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.wa-qr-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    display: none;
+}
+
+.wa-qr-title.visible {
+    display: block;
+}
+
+.wa-hint {
+    color: var(--gray-500);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
+
+.wa-hint i {
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+#waQRContainer.has-qr .wa-hint {
+    display: none;
+}
+
+.wa-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.wa-actions .btn {
+    flex: 1 0 auto;
+    min-width: 90px;
+    padding: 1.2rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: var(--radius-sm);
+    background: var(--gray-50);
+    color: var(--deep-navy);
+    border: 2px solid var(--gray-200);
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.wa-actions .btn:hover {
+    background: var(--sky-blue);
+    color: var(--deep-navy);
+    border-color: var(--sky-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.wa-actions .btn i {
+    margin-right: 0.6rem;
+}
+
+.wa-status {
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-height: 3rem;
+    color: var(--gray-500);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.wa-status.success {
+    color: #10b981;
+}
+
+.wa-status.error {
+    color: #ef4444;
+}
+
+/* ───────────── RESPONSIVE ───────────── */
+@media (max-width: 1024px) {
+    .wa-tool-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 4rem;
+        min-height: auto;
+    }
+    .wa-display {
+        order: -1;
+    }
+    #waQRContainer {
+        min-height: 300px;
+    }
+    .wa-hero {
+        min-height: 45vh;
+        padding-top: 8rem;
+    }
+    .wa-hero-content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .wa-hero .hero-subtitle {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .wa-hero .hero-floating-icons {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .wa-tool-section {
+        padding: 5rem 0 7rem;
+    }
+    .wa-tool-wrapper {
+        padding: 2.5rem;
+        gap: 3rem;
+        border-width: 2px;
+        border-top-width: 4px;
+    }
+    .input-with-button {
+        flex-direction: column;
+    }
+    .input-with-button .btn {
+        width: 100%;
+    }
+    .link-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .wa-actions .btn {
+        flex: 1 1 45%;
+    }
+    #waQRContainer {
+        min-height: 260px;
+        padding: 2rem;
+        border-width: 3px;
+    }
+    .wa-hero {
+        min-height: 35vh;
+        padding-top: 7rem;
+        padding-bottom: 2rem;
+    }
+    .wa-hero .hero-title {
+        font-size: 2.8rem;
+    }
+    .wa-hero .hero-subtitle {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wa-tool-wrapper {
+        padding: 1.8rem;
+        border-radius: var(--radius-md);
+        gap: 2rem;
+    }
+    .wa-actions .btn {
+        flex: 1 1 100%;
+    }
+    .wa-hero .hero-title {
+        font-size: 2.4rem;
+    }
+    .wa-hero .hero-subtitle {
+        font-size: 1.4rem;
+        padding: 0 0.5rem;
+    }
+    #waQRContainer {
+        min-height: 220px;
+        padding: 1.5rem;
+        border-width: 2px;
+    }
+    #waQRContainer.has-qr {
+        border-width: 2px;
+    }
+    .wa-hero .hero-badge {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
+    }
+    .wa-qr-title {
+        font-size: 1.4rem;
+    }
+}

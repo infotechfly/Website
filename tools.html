@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWQW6Z6Z4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BWQW6Z6Z4K');
+    </script>
+    <link rel="icon" href="img/Logo.png" type="image/png" />
+    <meta name="description" content="Free online tools – QR Generator, Number Converter, Color Picker, WhatsApp Link Generator, and more." />
+    <meta name="author" content="Info Tech Fly" />
+    <title>Tools | Info Tech Fly</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Global Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tools‑page specific styles (navbar untouched) -->
+    <style>
+        body.tools-page .navbar:not(.scrolled) {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        body.tools-page .navbar:not(.scrolled) .nav-link {
+            color: var(--gray-700);
+        }
+        body.tools-page .navbar:not(.scrolled) .nav-logo {
+            color: var(--deep-navy);
+        }
+        body.tools-page .navbar:not(.scrolled) .nav-logo strong {
+            color: var(--sky-blue);
+        }
+        body.tools-page .navbar:not(.scrolled) .hamburger span {
+            background: var(--deep-navy);
+        }
+        body.tools-page .navbar:not(.scrolled) .nav-cta .btn-primary {
+            background: var(--sky-blue);
+            color: var(--deep-navy);
+            border-color: var(--sky-blue);
+        }
+        body.tools-page .navbar:not(.scrolled) .nav-link:hover,
+        body.tools-page .navbar:not(.scrolled) .nav-link.active {
+            color: var(--sky-blue-dark);
+        }
+
+        .tools-main-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--deep-navy-dark) 0%, var(--deep-navy) 100%);
+            padding: 12rem 0 8rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+        .tools-main-header h1 {
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .tools-main-header h1 span {
+            color: var(--sky-blue);
+        }
+        .tools-main-header p {
+            font-size: 1.7rem;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 2;
+        }
+        .header-wave svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .tools-search {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            position: relative;
+        }
+        .tools-search input {
+            width: 100%;
+            padding: 1.4rem 2rem 1.4rem 5rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            font-size: 1.6rem;
+            color: var(--gray-900);
+            background: var(--white);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .tools-search input:focus {
+            border-color: var(--sky-blue);
+            box-shadow: 0 0 0 4px rgba(135, 206, 235, 0.2);
+            outline: none;
+        }
+        .tools-search i {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--gray-500);
+            pointer-events: none;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            text-align: center;
+            cursor: default;
+        }
+        .tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--sky-blue);
+        }
+        .tool-card .tool-icon {
+            font-size: 3.6rem;
+            color: var(--sky-blue-dark);
+            margin-bottom: 1.5rem;
+        }
+        .tool-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            margin-bottom: 0.8rem;
+        }
+        .tool-card p {
+            font-size: 1.4rem;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .tool-card .tool-link {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            background: var(--gray-50);
+            color: var(--deep-navy);
+            font-weight: 600;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+        .tool-card .tool-link:hover {
+            background: var(--sky-blue);
+            color: var(--white);
+            border-color: var(--sky-blue);
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 4rem;
+            font-size: 1.8rem;
+            color: var(--gray-500);
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="tools-page">
+
+    <!-- ═══════════════════════ NAVIGATION (EXACTLY AS INDEX) ═══════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-circle">
+                    <img src="img/Logo.png" alt="Info Tech Fly Logo" />
+                </div>
+                <span>Info Tech <strong>Fly</strong></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#training" class="nav-link">Training</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="tools.html" class="nav-link active">Tools</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="enroll.html" class="btn btn-sm btn-primary">Enroll Now</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+    <div class="tools-main-header">
+        <div class="container">
+            <h1>Free <span>Tools</span> Hub</h1>
+            <p>Explore a growing collection of handy online utilities — QR codes, color pickers, converters, and more.</p>
+        </div>
+        <div class="header-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ TOOLS SECTION ═══════════════════════ -->
+    <section class="tools" style="padding: 5rem 0 8rem;">
+        <div class="container">
+
+            <div class="tools-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="toolSearch" placeholder="Search tools by name or keyword..." />
+            </div>
+
+            <div class="tools-grid" id="toolsGrid">
+
+                <div class="tool-card" data-keywords="qr code generator">
+                    <div class="tool-icon"><i class="fa-solid fa-qrcode"></i></div>
+                    <h3>QR Code Generator</h3>
+                    <p>Generate QR codes from text, URLs, or contact info instantly.</p>
+                    <a href="tools/qr-code-generator/qr-generator.html" class="tool-link">Launch Tool</a>
+                </div>
+
+                <div class="tool-card" data-keywords="whatsapp link generator">
+                    <div class="tool-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3>WhatsApp Link Generator</h3>
+                    <p>Create a clickable WhatsApp chat link with a pre‑filled message.</p>
+                    <a href="tools/whatsapp-link-generator/whatsapp-link-generator.html" class="tool-link">Launch Tool</a>
+                </div>
+
+                <div class="tool-card" data-keywords="color picker hex rgb hsl palette">
+                    <div class="tool-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Color Picker</h3>
+                    <p>Pick colors, get HEX/RGB/HSL values, and build beautiful palettes.</p>
+                    <a href="tools/color-picker/color-picker.html" class="tool-link">Launch Tool</a>
+                </div>
+                
+            </div>
+
+            <div class="no-results" id="noResults">No tools found matching your search.</div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo" /></div>
+                        <span>Info Tech <strong>Fly</strong></span>
+                    </a>
+                    <p>Empowering the next generation of tech professionals with industry‑leading training and digital solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#training">Training</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Training</h4>
+                    <ul>
+                        <li><a href="enroll.html">Web Development</a></li>
+                        <li><a href="enroll.html">Cyber Security</a></li>
+                        <li><a href="enroll.html">Python Programming</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Info Tech Fly</strong>. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════ ALL JAVASCRIPT INLINE (FIXED) ═══════════════════════ -->
+    <script>
+        (function() {
+            "use strict";
+
+            // ──────────────────────── NAVBAR SCROLL EFFECT ────────────────────────
+            function initNavbar() {
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // ──────────────────────── TYPING ANIMATION (SAFE) ────────────────────────
+            function initTypingAnimation() {
+                const typingElement = document.getElementById('typingText');
+                if (!typingElement) return;
+
+                const words = [
+                    'Web Development',
+                    'Cyber Security',
+                    'Artificial Intelligence',
+                    'Machine Learning',
+                    'Python Programming',
+                    'Ethical Hacking',
+                    'Full Stack Development',
+                    'Cloud Computing'
+                ];
+
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let typeSpeed = 100;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+
+                    if (isDeleting) {
+                        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                        typeSpeed = 50;
+                    } else {
+                        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                        typeSpeed = 120;
+                    }
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        typeSpeed = 1800;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        typeSpeed = 400;
+                    }
+
+                    setTimeout(type, typeSpeed);
+                }
+
+                setTimeout(type, 3000);
+            }
+
+            // ──────────────────────── SCROLL REVEAL ────────────────────────
+            function initScrollReveal() {
+                const revealElements = document.querySelectorAll(
+                    '.about-card, .training-card, .service-card, .contact-card, .section-header'
+                );
+                revealElements.forEach(el => el.classList.add('reveal'));
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(el => observer.observe(el));
+            }
+
+            // ──────────────────────── TOOLS SEARCH ────────────────────────
+            function initToolsSearch() {
+                const searchInput = document.getElementById('toolSearch');
+                const cards = document.querySelectorAll('.tool-card');
+                const noResults = document.getElementById('noResults');
+
+                function filterTools() {
+                    const query = searchInput.value.toLowerCase().trim();
+                    let visibleCount = 0;
+
+                    cards.forEach(function(card) {
+                        const keywords = (card.dataset.keywords || '') + ' ' + card.textContent;
+                        const match = keywords.toLowerCase().includes(query);
+                        card.style.display = match ? '' : 'none';
+                        if (match) visibleCount++;
+                    });
+
+                    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
+
+                searchInput.addEventListener('input', filterTools);
+            }
+
+            // ──────────────────────── MOBILE MENU ────────────────────────
+            function initMobileMenu() {
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('navMenu');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // ──────────────────────── SMOOTH SCROLL ────────────────────────
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const navHeight = document.getElementById('navbar').offsetHeight;
+                            window.scrollTo({
+                                top: target.offsetTop - navHeight - 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            // ──────────────────────── ACTIVE NAV LINK ON SCROLL ────────────────────
+            function initActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                window.addEventListener('scroll', function() {
+                    let current = '';
+                    const scrollPos = window.scrollY + 150;
+
+                    sections.forEach(function(section) {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + current) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // ──────────────────────── PAGE INIT ────────────────────────
+            function init() {
+                initNavbar();
+                initTypingAnimation();
+                initScrollReveal();
+                initToolsSearch();
+                initMobileMenu();
+                initSmoothScroll();
+                initActiveNavLink();
+
+                console.log('%c🚀 Info Tech Fly %cTools Page Ready',
+                    'color: #87CEEB; font-size: 2rem; font-weight: bold;',
+                    'color: #1E3A5F; font-size: 1.4rem;');
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+</body>
+</html>

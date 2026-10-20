@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-BWQW6Z6Z4K"></script>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BWQW6Z6Z4K');
+</script>
+<link rel="icon" href="img/Logo.png" type="image/png">
+<meta name="description" content="Info Tech Fly Community - share your projects, post real-world problem ideas and discuss with other developers.">
+<title>Community | Info Tech Fly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo"></div>
+      <span>Info Tech <strong>Fly</strong></span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+      <li><a href="training.html" class="nav-link">Training</a></li>
+      <li><a href="index.html#services" class="nav-link">Services</a></li>
+      <li><a href="community.html" class="nav-link active">Community</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="tools.html" class="nav-link">Tools</a></li>
+    </ul>
+    <div class="nav-cta"><a href="contact.html" class="btn btn-sm btn-primary">Get Started</a></div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="hero" id="community-hero">
+  <div class="hero-particles">
+    <span class="particle" style="--x:10%;--y:70%;--s:8px;--d:6s;"></span>
+    <span class="particle" style="--x:35%;--y:25%;--s:6px;--d:8s;"></span>
+    <span class="particle" style="--x:65%;--y:60%;--s:10px;--d:5s;"></span>
+    <span class="particle" style="--x:88%;--y:30%;--s:7px;--d:7s;"></span>
+  </div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fa-solid fa-users"></i> Community Hub</div>
+      <h1 class="hero-title">Build, Share &amp;<br><span class="typing-text">Solve Together</span></h1>
+      <p class="hero-subtitle">Show your projects, post real-world problems you want solved, and discuss with other learners.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary btn-lg" data-open="projectDialog"><i class="fa-solid fa-code-branch"></i> Share a Project</button>
+        <button class="btn btn-outline btn-lg" data-open="ideaDialog"><i class="fa-solid fa-lightbulb"></i> Post an Idea</button>
+      </div>
+      <div class="cm-stats">
+        <div><strong id="statProjects">0</strong><span>Projects</span></div>
+        <div><strong id="statIdeas">0</strong><span>Ideas</span></div>
+        <div><strong id="statComments">0</strong><span>Comments</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave"><svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L0,120Z"/></svg></div>
+</section>
+
+<section class="cm-search">
+  <div class="container">
+    <div class="cm-searchbar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="search" type="search" placeholder="Search topic, e.g. python, or category:cybersecurity author:rahul" aria-label="Search community">
+      <button class="cm-clear" id="clearSearch" type="button" aria-label="Clear search" hidden><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <p class="cm-hint">Key:value search works with <code>category:</code> <code>author:</code> <code>title:</code> <code>type:project</code> <code>type:idea</code></p>
+    <div class="cm-tabs" id="tabs" role="tablist"></div>
+    <div class="cm-chips" id="chips"></div>
+  </div>
+</section>
+
+<section class="cm-feed">
+  <div class="container">
+    <p class="cm-count" id="count" aria-live="polite"></p>
+    <div class="cm-grid" id="feed"></div>
+    <div class="section-cta"><button class="btn btn-primary" id="more" hidden>Load more</button></div>
+  </div>
+</section>
+
+<!-- Project dialog -->
+<dialog class="cm-dialog" id="projectDialog">
+  <div class="cm-dhead"><h2><i class="fa-solid fa-code-branch"></i> Share your project</h2><button type="button" class="cm-x" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>
+  <form class="contact-form cm-form" id="projectForm" novalidate>
+    <div class="cm-msg" role="alert"></div>
+    <div class="form-group"><label for="pFull">Full name <span>*</span></label><input id="pFull" name="fullName" maxlength="60" autocomplete="name" required></div>
+    <div class="form-group"><label for="pName">Project name <span>*</span></label><input id="pName" name="projectName" maxlength="80" required></div>
+    <div class="form-group"><label for="pDesc">Description <span>*</span></label><textarea id="pDesc" name="description" rows="4" maxlength="1000" placeholder="What does it do and what did you use?" required></textarea></div>
+    <div class="form-group"><label for="pRepo">GitHub repo link <span>*</span></label><input id="pRepo" name="githubUrl" type="url" placeholder="https://github.com/username/repo" required></div>
+    <div class="form-group"><label>Categories <span>*</span> <small>(pick up to 4)</small></label><div class="cm-picker" data-picker></div></div>
+    <input class="cm-trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Post project</button>
+  </form>
+</dialog>
+
+<!-- Idea dialog -->
+<dialog class="cm-dialog" id="ideaDialog">
+  <div class="cm-dhead"><h2><i class="fa-solid fa-lightbulb"></i> Post a real-world problem / idea</h2><button type="button" class="cm-x" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>
+  <form class="contact-form cm-form" id="ideaForm" novalidate>
+    <div class="cm-msg" role="alert"></div>
+    <div class="form-group"><label for="iFull">Full name <span>*</span></label><input id="iFull" name="fullName" maxlength="60" autocomplete="name" required></div>
+    <div class="form-group"><label for="iTitle">Idea title <span>*</span></label><input id="iTitle" name="title" maxlength="80" required></div>
+    <div class="form-group"><label for="iProblem">Real-world problem <span>*</span></label><textarea id="iProblem" name="problem" rows="3" maxlength="800" placeholder="Who faces this problem and why does it matter?" required></textarea></div>
+    <div class="form-group"><label for="iSol">Your project idea <span>*</span></label><textarea id="iSol" name="solution" rows="3" maxlength="800" placeholder="How could it be solved?" required></textarea></div>
+    <div class="form-group"><label>Categories <span>*</span> <small>(pick up to 4)</small></label><div class="cm-picker" data-picker></div></div>
+    <input class="cm-trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Post idea</button>
+  </form>
+</dialog>
+
+<footer class="footer">
+  <div class="footer-wave"><svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L0,120Z"/></svg></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="footer-logo"><div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo"></div><span>Info Tech <strong>Fly</strong></span></a>
+        <p>Empowering the next generation of tech professionals with industry‑leading training and digital solutions.</p>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="community.html">Community</a></li><li><a href="contact.html">Contact</a></li><li><a href="tools.html">Tools</a></li></ul></div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a href="training.html">Training</a></li><li><a href="tools.html">Tools</a></li><li><a href="index.html#services">Web Services</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Info Tech Fly</strong>. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://t.me/infotechfly" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.linkedin.com/company/infotechfly/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/community.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BWQW6Z6Z4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BWQW6Z6Z4K');
+    </script>
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <meta name="description" content="Info Tech Fly Services - static websites, dynamic websites, WordPress, apps and software, cloud deployment and hosting, security and maintenance.">
+    <meta name="author" content="Info Tech Fly">
+    <title>Services | Info Tech Fly</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Shared theme + page-only additions -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo"></div>
+                <span>Info Tech <strong>Fly</strong></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="training.html" class="nav-link">Training</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-sm btn-primary">Get Started</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero svc-hero" id="home">
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fa-solid fa-laptop-code"></i> Our Services</div>
+                <h1 class="hero-title">
+                    Websites, Apps &amp; Cloud Hosting<br>
+                    <span class="typing-text">Built to Fly</span>
+                </h1>
+                <p class="hero-subtitle">
+                    From a simple static site to a full web app with login and admin panel.
+                    Hover over any service to see the pages, features and technology you get,
+                    then send your request straight to our WhatsApp.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary btn-lg"><i class="fa-solid fa-layer-group"></i> Explore Services</a>
+                    <a href="#contact" class="btn btn-outline btn-lg"><i class="fa-brands fa-whatsapp"></i> Get a Quote</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-photo">
+                    <img src="img/hero.avif" alt="Team building websites and apps together" width="900" height="600">
+                    <i class="fa-brands fa-python photo-chip" style="--duration:7s;--delay:0s;top:-22px;left:-22px;"></i>
+                    <i class="fa-brands fa-react photo-chip" style="--duration:9s;--delay:1s;top:30px;right:-26px;"></i>
+                    <i class="fa-brands fa-aws photo-chip" style="--duration:8s;--delay:2s;bottom:-24px;left:18%;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FFFFFF" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SERVICES (cards are rendered by services.js) ═══════════════════════ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Pick a Service, <span class="highlight">See Everything Inside</span></h2>
+                <p class="section-desc">Hover over a card (or tap it on mobile) to see the pages, features and technology included, and request a quote.</p>
+            </div>
+            <div class="svc-grid" id="svcGrid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TECHNOLOGY (rendered by services.js) ═══════════════════════ -->
+    <section class="tech-section" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Tech Stack</span>
+                <h2 class="section-title">Tools We <span class="highlight">Build With</span></h2>
+                <p class="section-desc">We choose the right technology for your project, from plain HTML to Python, Node.js, PHP, WordPress and the cloud.</p>
+            </div>
+            <div class="tech-grid" id="techGrid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PROCESS (rendered by services.js) ═══════════════════════ -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">From Idea to <span class="highlight">Launch</span></h2>
+                <p class="section-desc">A simple four-step process, with updates on WhatsApp all the way.</p>
+            </div>
+            <div class="steps" id="stepGrid"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get a Quote</span>
+                <h2 class="section-title">Tell Us What <span class="highlight">You Need</span></h2>
+                <p class="section-desc">Fill in the form and your request opens in WhatsApp, ready to send. We reply within 24 hours.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div><h4>Call Us</h4><p>+91 7225880469</p></div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div><h4>Email</h4><p>contactinfotechfly@gmail.com</p></div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div><h4>Location</h4><p>India (Remote)</p></div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" data-whatsapp>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cName">Full Name <span>*</span></label>
+                                <input type="text" id="cName" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cEmail">Email Address <span>*</span></label>
+                                <input type="email" id="cEmail" name="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cPhone">Phone Number <span>*</span></label>
+                                <input type="tel" id="cPhone" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cService">Service <span>*</span></label>
+                                <select id="cService" name="service" required></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cMessage">Your Message <span>*</span></label>
+                            <textarea id="cMessage" name="message" rows="5" placeholder="Tell us what you're looking for..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SERVICE POPUP (filled by services.js) ═══════════════════════ -->
+    <dialog class="svc-modal" id="svcModal" aria-labelledby="mTitle">
+        <button type="button" class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-grid">
+            <div class="modal-info">
+                <div class="modal-cover">
+                    <img id="mImg" src="" alt="" width="900" height="600">
+                    <div class="modal-cover-text">
+                        <span class="svc-tag" id="mTag"></span>
+                        <h3 id="mTitle"></h3>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p id="mSummary"></p>
+
+                    <h4 id="mPagesTitle"></h4>
+                    <ul class="page-list" id="mPages"></ul>
+
+                    <div id="mPerksWrap">
+                        <h4>Also included</h4>
+                        <ul class="perk-list" id="mPerks"></ul>
+                    </div>
+
+                    <h4>Technology we use</h4>
+                    <div class="chip-row" id="mTech"></div>
+                </div>
+            </div>
+
+            <form class="modal-form" data-whatsapp novalidate>
+                <h4>Get a quote on WhatsApp</h4>
+                <p class="form-note">Fill in your details. Your request opens in WhatsApp, ready to send.</p>
+                <input type="hidden" name="service" id="mService">
+                <div class="form-group">
+                    <label for="mName">Full Name <span>*</span></label>
+                    <input type="text" id="mName" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mPhone">Phone Number <span>*</span></label>
+                    <input type="tel" id="mPhone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="mEmail">Email Address</label>
+                    <input type="email" id="mEmail" name="email" placeholder="Optional">
+                </div>
+                <fieldset class="check-set">
+                    <legend>What do you need?</legend>
+                    <div class="check-grid" id="mAddons"></div>
+                </fieldset>
+                <div class="form-group">
+                    <label for="mMessage">Message</label>
+                    <textarea id="mMessage" name="message" rows="3" placeholder="Anything else we should know?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f9fafb" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-circle"><img src="img/Logo.png" alt="Info Tech Fly Logo"></div>
+                        <span>Info Tech <strong>Fly</strong></span>
+                    </a>
+                    <p>Empowering the next generation of tech professionals with industry‑leading training and digital solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="training.html">Training</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="#services">Web Services</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Info Tech Fly</strong>. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@InfoTechFly" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/infotechfly/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/infotechfly" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/company/infotechfly/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared JS first, then page JS (order matters) -->
+    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

@@ -1,0 +1,830 @@
+/* ═══════════════════════ INFO TECH FLY — SERVICES PAGE ═══════════════════════ */
+/* Loads AFTER style.css. Uses its variables, buttons, forms, hero, footer.     */
+/* Only styles that are new to this page live here.                             */
+
+/* ---------------------------------- SHARED: TECH CHIPS ---------------------------------- */
+.chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tech-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    background: rgba(135, 206, 235, 0.18);
+    color: var(--deep-navy);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tech-chip i {
+    color: var(--sky-blue-dark);
+}
+
+.svc-tag {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--sky-blue-dark);
+    margin-bottom: 0.4rem;
+}
+
+/* ---------------------------------- HERO ---------------------------------- */
+.svc-hero {
+    min-height: 86vh;
+}
+
+.svc-hero .hero-container {
+    padding-bottom: 12rem;
+}
+
+.hero-photo {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    isolation: isolate;
+    animation: photoFloat 7s ease-in-out infinite;
+}
+
+.hero-photo img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 3px solid rgba(135, 206, 235, 0.4);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* offset outline behind the photo */
+.hero-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translate(18px, 18px);
+    border: 2px solid var(--sky-blue);
+    border-radius: var(--radius-lg);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.photo-chip {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    font-size: 2.6rem;
+    color: var(--sky-blue);
+    background: rgba(21, 40, 64, 0.88);
+    border: 1px solid rgba(135, 206, 235, 0.4);
+    border-radius: var(--radius-full);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: floatIcon var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes photoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ---------------------------------- SERVICE CARDS ---------------------------------- */
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.svc-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.svc-card:focus-visible {
+    outline: 3px solid var(--sky-blue);
+    outline-offset: 3px;
+}
+
+.svc-card.visible:hover,
+.svc-card.visible:focus-visible {
+    transform: translateY(-8px);
+    border-color: var(--sky-blue);
+    box-shadow: var(--shadow-xl);
+}
+
+.svc-media {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--deep-navy);
+}
+
+.svc-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* navy veil + expand icon that appear on hover */
+.svc-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(21, 40, 64, 0.85), rgba(21, 40, 64, 0.15));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.svc-peek {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.svc-peek i {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    font-size: 2.2rem;
+    color: var(--deep-navy);
+    background: var(--sky-blue);
+    border-radius: var(--radius-full);
+    transform: scale(0.4);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+}
+
+.svc-card:hover .svc-media img,
+.svc-card:focus-visible .svc-media img {
+    transform: scale(1.1);
+}
+
+.svc-card:hover .svc-media::after,
+.svc-card:focus-visible .svc-media::after {
+    opacity: 1;
+}
+
+.svc-card:hover .svc-peek i,
+.svc-card:focus-visible .svc-peek i {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.svc-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4.2rem 2.6rem 2.6rem;
+}
+
+.svc-badge {
+    position: absolute;
+    top: -2.8rem;
+    left: 2.6rem;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    font-size: 2.2rem;
+    color: var(--sky-blue);
+    background: var(--deep-navy);
+    border: 4px solid var(--white);
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+}
+
+.svc-card:hover .svc-badge,
+.svc-card:focus-visible .svc-badge {
+    background: var(--sky-blue);
+    color: var(--deep-navy);
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.svc-body h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+    margin-bottom: 1rem;
+}
+
+.svc-body p {
+    font-size: 1.4rem;
+    color: var(--gray-500);
+}
+
+.svc-body .chip-row {
+    margin: 1.6rem 0 2.2rem;
+}
+
+.svc-more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--deep-navy);
+}
+
+.svc-more i {
+    transition: transform 0.3s ease;
+}
+
+.svc-card:hover .svc-more i,
+.svc-card:focus-visible .svc-more i {
+    transform: translateX(6px);
+}
+
+/* wide "Not sure?" banner card */
+.svc-card-wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    background: linear-gradient(135deg, var(--deep-navy-dark), var(--deep-navy));
+    border-color: transparent;
+}
+
+.svc-card-wide .svc-media {
+    flex: 0 0 42%;
+    aspect-ratio: auto;
+    min-height: 280px;
+}
+
+.svc-card-wide .svc-body {
+    justify-content: center;
+    padding: 4rem;
+}
+
+.svc-card-wide .svc-badge {
+    position: static;
+    margin-bottom: 1.6rem;
+    border-color: rgba(135, 206, 235, 0.3);
+}
+
+.svc-card-wide .svc-body h3 {
+    color: var(--white);
+    font-size: 2.8rem;
+}
+
+.svc-card-wide .svc-body p {
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 480px;
+}
+
+.svc-card-wide .svc-tag,
+.svc-card-wide .svc-more {
+    color: var(--sky-blue);
+}
+
+.svc-card-wide .tech-chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.svc-card-wide .svc-more {
+    margin-top: 0;
+}
+
+/* ---------------------------------- TECH STACK ---------------------------------- */
+.tech-section {
+    background: var(--gray-50);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.tech-card {
+    padding: 2.6rem 2.2rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.tech-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.6rem;
+    font-size: 2.8rem;
+    color: var(--deep-navy);
+    background: rgba(135, 206, 235, 0.2);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.tech-card h4 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+    transition: color 0.3s ease;
+}
+
+.tech-card p {
+    font-size: 1.3rem;
+    color: var(--gray-500);
+    transition: color 0.3s ease;
+}
+
+.tech-card.visible:hover {
+    transform: translateY(-6px);
+    background: var(--deep-navy);
+    border-color: var(--deep-navy);
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-card:hover .tech-icon {
+    background: var(--sky-blue);
+    transform: rotate(-8deg) scale(1.1);
+}
+
+.tech-card:hover h4 {
+    color: var(--white);
+}
+
+.tech-card:hover p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------------------------------- PROCESS ---------------------------------- */
+.process {
+    background: var(--white);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.step {
+    position: relative;
+    text-align: center;
+}
+
+.step-no {
+    position: relative;
+    z-index: 1;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 2rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--sky-blue);
+    background: var(--deep-navy);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 0 8px rgba(135, 206, 235, 0.2);
+}
+
+/* dashed line joining one step to the next */
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: calc(50% + 44px);
+    width: calc(100% + 3rem - 88px);
+    border-top: 2px dashed var(--sky-blue);
+}
+
+.step h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+    margin-bottom: 0.8rem;
+}
+
+.step p {
+    font-size: 1.4rem;
+    color: var(--gray-500);
+}
+
+/* ---------------------------------- FORM: select (matches inputs in style.css) ---------------------------------- */
+.form-group select {
+    width: 100%;
+    padding: 1.2rem 4rem 1.2rem 1.6rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font: inherit;
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    background: var(--gray-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231E3A5F' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 1.6rem center;
+    appearance: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.15);
+}
+
+/* ---------------------------------- POPUP ---------------------------------- */
+.svc-modal {
+    width: min(1020px, 94vw);
+    max-height: 92vh;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+.svc-modal::backdrop {
+    background: rgba(21, 40, 64, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.svc-modal[open] .modal-grid {
+    animation: modalIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.svc-modal[open]::backdrop {
+    animation: backdropIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(28px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes backdropIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html:has(.svc-modal[open]) {
+    overflow: hidden; /* lock page scroll behind the popup */
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    color: var(--deep-navy);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+    background: var(--sky-blue);
+    border-color: var(--sky-blue);
+    transform: rotate(90deg);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    max-height: 92vh;
+}
+
+/* left column: details */
+.modal-info {
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.modal-cover {
+    position: relative;
+    aspect-ratio: 16 / 8;
+    background: var(--deep-navy);
+}
+
+.modal-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(21, 40, 64, 0.92), rgba(21, 40, 64, 0.1) 70%);
+}
+
+.modal-cover-text {
+    position: absolute;
+    left: 3rem;
+    bottom: 2.2rem;
+    right: 3rem;
+    z-index: 1;
+}
+
+.modal-cover-text .svc-tag {
+    color: var(--sky-blue);
+}
+
+.modal-cover-text h3 {
+    font-size: clamp(2.4rem, 3vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.modal-body {
+    padding: 2.6rem 3rem 3rem;
+}
+
+.modal-body > p {
+    font-size: 1.5rem;
+    color: var(--gray-500);
+}
+
+.modal-body h4 {
+    margin: 2.6rem 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+}
+
+.page-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px dashed var(--gray-200);
+}
+
+.page-list li:last-child {
+    border-bottom: 0;
+}
+
+.page-list li > i {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+    color: var(--deep-navy);
+    background: rgba(135, 206, 235, 0.22);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.page-list li:hover > i {
+    background: var(--deep-navy);
+    color: var(--sky-blue);
+}
+
+.page-list strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--deep-navy);
+}
+
+.page-list span {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--gray-500);
+}
+
+.perk-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 2rem;
+}
+
+.perk-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--gray-700);
+}
+
+.perk-list i {
+    color: var(--sky-blue-dark);
+    font-size: 1.3rem;
+}
+
+/* right column: WhatsApp form */
+.modal-form {
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 3rem;
+    background: var(--gray-50);
+    border-left: 1px solid var(--gray-200);
+}
+
+.modal-form h4 {
+    margin-right: 4.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--deep-navy);
+}
+
+.form-note {
+    margin: 0.4rem 0 2.2rem;
+    font-size: 1.3rem;
+    color: var(--gray-500);
+}
+
+.check-set {
+    margin: 0 0 2rem;
+    padding: 0;
+    border: 0;
+}
+
+.check-set legend {
+    margin-bottom: 0.8rem;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--deep-navy);
+}
+
+.check-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.check {
+    position: relative;
+}
+
+.check input {
+    position: absolute;
+    opacity: 0;
+}
+
+.check span {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.check:hover span {
+    border-color: var(--sky-blue);
+}
+
+.check input:checked + span {
+    color: var(--white);
+    background: var(--deep-navy);
+    border-color: var(--deep-navy);
+}
+
+.check input:focus-visible + span {
+    outline: 3px solid var(--sky-blue);
+    outline-offset: 2px;
+}
+
+/* ---------------------------------- RESPONSIVE ---------------------------------- */
+@media (max-width: 1024px) {
+    .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 3rem;
+    }
+
+    .step:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-hero {
+        min-height: auto;
+    }
+
+    .svc-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .svc-card-wide {
+        flex-direction: column;
+    }
+
+    .svc-card-wide .svc-media {
+        flex: none;
+        aspect-ratio: 3 / 2;
+        min-height: 0;
+    }
+
+    .svc-card-wide .svc-body {
+        padding: 2.6rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* popup becomes one scrolling column */
+    .svc-modal {
+        width: 96vw;
+        max-height: 94vh;
+        overflow-y: auto;
+    }
+
+    .modal-grid {
+        display: block;
+        max-height: none;
+    }
+
+    .modal-info,
+    .modal-form {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .modal-form {
+        border-left: 0;
+        border-top: 1px solid var(--gray-200);
+        padding: 2.4rem 2rem 3rem;
+    }
+
+    .modal-body {
+        padding: 2.2rem 2rem 2.4rem;
+    }
+
+    .modal-cover-text {
+        left: 2rem;
+        right: 2rem;
+    }
+
+    .modal-close {
+        position: fixed;
+        top: calc(3vh + 1rem);
+        right: calc(2vw + 1rem);
+    }
+
+    .modal-form h4 {
+        margin-right: 0;
+    }
+
+    .perk-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        padding: 2rem 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}
