@@ -1,0 +1,34 @@
+/* Info Tech Fly - Roadmap cards with rectangle image + button
+   Loaded AFTER roadmaps.css, so roadmaps.css stays untouched. */
+
+.rm-card { position: relative; padding: 0; gap: 0; overflow: hidden; }
+.rm-img { aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg2); }
+.rm-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+.rm-card:hover .rm-img img { transform: scale(1.05); }
+.rm-img.ph {
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  color: var(--sky-d);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--sky) 20%, transparent), color-mix(in srgb, var(--sky-d) 8%, transparent));
+}
+
+.rm-body { display: flex; flex-direction: column; gap: .5rem; padding: 1.3rem 1.5rem 1.5rem; flex: 1; }
+.rm-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1.2rem;
+  border-radius: 99px;
+  background: linear-gradient(135deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d)));
+  color: #fff;
+  font: 600 .88rem Poppins, system-ui, sans-serif;
+  transition: box-shadow .3s, transform .2s;
+}
+.rm-btn i { transition: transform .3s; }
+.rm-card:hover .rm-btn { box-shadow: 0 8px 18px -6px color-mix(in srgb, var(--sky-d) 70%, transparent); }
+.rm-card:hover .rm-btn i { transform: translateX(5px); }
+.rm-card:focus-visible { outline: 3px solid var(--sky-d); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .rm-btn i, .rm-img img { transition: none; } }

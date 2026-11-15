@@ -1,0 +1,268 @@
+/* Info Tech Fly - Python Full Stack roadmap: ALL styles for this page (stand-alone)
+   Page width, cards, buttons, badge, FAQ and CTA come from css/style.css + css/theme.css.
+   This file adds the roadmap-only parts. It uses the site's own theme variables, so light / dark
+   mode works automatically and the theme itself is not changed.
+
+   Order in this file:  1. base page parts   2. slider, topic bar, videos   3. Fly developer extras   4. small screens */
+
+/* =====================================================================
+   1. BASE PAGE PARTS (hero, progress strip, step cards, plan, skills, about)
+   ===================================================================== */
+
+/* keeps the progress strip sticky (a clipped body does not become a scroll box, "hidden" does) */
+body { overflow-x: clip; }
+
+/* ---------- hero ---------- */
+.am-hero {
+  position: relative;
+  padding: 8.4rem 0 3.4rem;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--bg2) 75%, transparent), transparent);
+}
+.am-crumb { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 1.5rem; font-size: .82rem; color: var(--mu); }
+.am-crumb a { color: var(--mu); transition: color .25s; }
+.am-crumb a:hover { color: var(--sky-d); }
+.am-crumb i { font-size: .6rem; opacity: .7; }
+.am-crumb [aria-current] { color: var(--hc); font-weight: 600; }
+.am-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; min-width: 0; }
+.am-hero-txt { min-width: 0; }
+.am-hero-txt h1 {
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  background: linear-gradient(90deg, var(--hc) 40%, var(--sky-d));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.am-hero-txt > p { max-width: 36rem; font-size: 1.04rem; color: var(--mu); }
+[data-theme=dark] .am-hero-txt > p { color: #d3e0ee; }
+.am-facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.3rem 0 0; padding: 0; list-style: none; }
+.am-facts li { display: inline-flex; align-items: center; gap: .45rem; padding: .3rem .85rem; border-radius: 99px; border: 1px solid var(--bd); background: var(--card); color: var(--hc); font-size: .82rem; font-weight: 600; }
+.am-facts li i { color: var(--sky-d); }
+.am-btns { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+
+.am-banner {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 6px solid var(--card);
+  box-shadow: var(--sh);
+  background: linear-gradient(135deg, var(--sky), var(--navy));
+}
+.am-banner img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
+.am-banner .am-ph { position: absolute; inset: 0; display: grid; place-items: center; font-size: 4.5rem; color: rgba(255, 255, 255, .9); }
+.am-banner.no-img img { display: none; }
+
+/* ---------- progress strip + topic bar (sticks under the site header while you learn) ---------- */
+.pf-learn { position: relative; }
+.am-prog {
+  position: sticky;
+  top: 78px;
+  z-index: 80;
+  padding: .6rem 0 .45rem;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--glassb, var(--bd));
+}
+.am-prog-in { display: flex; align-items: center; gap: .9rem; }
+#amProgTxt { flex: none; font-size: .82rem; font-weight: 600; color: var(--hc); white-space: nowrap; }
+.am-bar { flex: 1; min-width: 70px; height: 8px; border-radius: 99px; background: var(--bg2); border: 1px solid var(--bd); overflow: hidden; }
+.am-bar i { display: block; width: 0; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d))); transition: width .5s ease; }
+.am-reset { flex: none; padding: .3rem .85rem; border-radius: 99px; border: 1px solid var(--bd); background: var(--card); color: var(--hc); font: 600 .75rem Poppins, system-ui, sans-serif; cursor: pointer; transition: border-color .25s, color .25s; }
+.am-reset:hover { border-color: var(--sky-d); color: var(--sky-d); }
+.am-reset[hidden] { display: none; }
+
+/* ---------- step cards ---------- */
+.am-steps { padding: 2rem 0 4rem; }
+.am-step { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.4rem; padding: 1.8rem; }
+.am-num {
+  width: 52px; height: 52px; display: grid; place-items: center; flex: none;
+  border-radius: 50%; color: #fff; font-size: 1.2rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--ac1, var(--sky-d)), var(--ac2, var(--navy)));
+  box-shadow: 0 8px 18px -8px color-mix(in srgb, var(--sky-d) 80%, transparent);
+}
+.am-main { min-width: 0; }
+.am-main > header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; }
+.am-main h3 { font-size: 1.4rem; font-weight: 700; color: var(--hc); margin: 0; }
+.am-goal { margin: .55rem 0 1.1rem; color: var(--tx); }
+.am-done { margin-top: 1.5rem; }
+.am-done[aria-pressed=true] { border-color: #10b981; color: #0f9f6e; }
+.am-step.is-done { border-color: #10b981; }
+.am-step.is-done .am-num { background: #10b981; box-shadow: 0 8px 18px -8px rgba(16, 185, 129, .8); }
+
+/* ---------- sections below the steps ---------- */
+.am-sec { padding: 4rem 0; }
+.am-sec h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); text-align: center; margin-bottom: .5rem; }
+.am-sub { max-width: 42rem; margin: 0 auto 2rem; text-align: center; color: var(--mu); }
+
+
+.am-skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem; }
+.am-skill { padding: 1.5rem; text-align: center; }
+.am-skill .ic { width: 56px; height: 56px; margin: 0 auto 1rem; display: grid; place-items: center; border-radius: 16px; font-size: 1.4rem; color: #fff; background: linear-gradient(135deg, var(--ac1, var(--sky-d)), var(--ac2, var(--navy))); }
+.am-skill h3 { margin: 0 0 .25rem; font-size: 1.05rem; color: var(--hc); }
+.am-skill p { margin: 0; font-size: .88rem; color: var(--mu); }
+
+.am-about { max-width: 860px; margin: 0 auto; padding: 2rem 2.2rem; }
+.am-about h3 { margin: 1.2rem 0 .4rem; font-size: 1.1rem; color: var(--hc); }
+.am-about h3:first-child { margin-top: 0; }
+.am-about p { margin: 0; color: var(--tx); line-height: 1.75; }
+.am-about a { color: var(--sky-d); text-decoration: underline; text-underline-offset: 3px; }
+
+.am-ns { text-align: center; color: var(--mu); }
+ol.am-ns { max-width: 520px; margin: 1rem auto; text-align: left; }
+
+/* =====================================================================
+   2. SLIDER, TOPIC BAR, VIDEOS, NOTES
+   ===================================================================== */
+
+/* ---------- Hindi / English switch (top strip and above every video block) ---------- */
+.pf-lang { display: inline-flex; flex: none; padding: 3px; border-radius: 99px; border: 1px solid var(--bd); background: var(--bg2); }
+.pf-lang button { border: 0; border-radius: 99px; padding: .3rem .85rem; background: transparent; color: var(--hc); font: 600 .78rem Poppins, system-ui, sans-serif; cursor: pointer; transition: background .25s, color .25s; }
+.pf-lang button[aria-pressed=true] { background: linear-gradient(135deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d))); color: #fff; }
+.pf-lang button:focus-visible { outline: 2px solid var(--sky-d); outline-offset: 2px; }
+.pf-lang-s button { padding: .22rem .75rem; font-size: .74rem; }
+
+/* ---------- topic bar (inside the sticky progress strip) ---------- */
+.pf-tabs { display: flex; gap: .4rem; margin: 0; padding: .55rem 0 .2rem; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.pf-tabs::-webkit-scrollbar { display: none; }
+.pf-tab { flex: none; display: inline-flex; align-items: center; gap: .45rem; padding: .34rem .85rem .34rem .4rem; border-radius: 99px; border: 1px solid var(--bd); background: var(--card); color: var(--hc); font: 600 .78rem Poppins, system-ui, sans-serif; white-space: nowrap; text-decoration: none; cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .2s; }
+.pf-tab b { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: var(--bg2); font-size: .68rem; font-weight: 700; }
+.pf-tab b i { display: none; font-size: .62rem; }
+.pf-tab:hover { border-color: var(--sky-d); color: var(--sky-d); }
+.pf-tab:active { transform: scale(.97); }
+.pf-tab[aria-selected=true] { background: linear-gradient(135deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d))); border-color: transparent; color: #fff; }
+.pf-tab[aria-selected=true] b { background: rgba(255, 255, 255, .25); color: #fff; }
+.pf-tab.is-done b { background: #10b981; color: #fff; }
+.pf-tab.is-done b span { display: none; }
+.pf-tab.is-done b i { display: block; }
+.pf-tab:focus-visible { outline: 2px solid var(--sky-d); outline-offset: 2px; }
+
+/* ---------- slider (steps go left and right) ---------- */
+.pf-slider { position: relative; }
+.pf-bar { display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap; margin: 0 0 .9rem; }
+.pf-count { margin: 0; font-size: .86rem; font-weight: 600; color: var(--mu); }
+.pf-count b { color: var(--hc); }
+.pf-count span { font-weight: 500; }
+.pf-hint { margin: 0; font-size: .78rem; color: var(--mu); }
+.pf-hint i { margin: 0 .2rem; color: var(--sky-d); }
+.pf-ctl { display: inline-flex; gap: .4rem; }
+.pf-circ { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--bd); background: var(--card); color: var(--hc); cursor: pointer; transition: background .25s, color .25s, border-color .25s, transform .2s; }
+.pf-circ:hover:not(:disabled) { background: linear-gradient(135deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d))); border-color: transparent; color: #fff; }
+.pf-circ:active:not(:disabled) { transform: scale(.93); }
+.pf-circ:disabled { opacity: .4; cursor: not-allowed; }
+.pf-circ:focus-visible { outline: 3px solid var(--sky-d); outline-offset: 2px; }
+
+.pf-track { position: relative; display: flex; align-items: flex-start; gap: 16px; box-sizing: border-box; padding: 6px 0; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; transition: height .35s ease; }
+.pf-track::-webkit-scrollbar { display: none; }
+.pf-track:focus { outline: 0; }
+.pf-track > .am-step { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
+
+.pf-nav { display: flex; justify-content: space-between; gap: .8rem; margin-top: 1.1rem; }
+.pf-nav .btn { max-width: 48%; }
+.pf-nav .btn .pf-t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-nav .btn:disabled { opacity: .4; cursor: not-allowed; }
+.pf-nav .next { margin-left: auto; }
+
+/* ---------- topic blocks inside a step ---------- */
+.pf-grp { margin-top: 1.1rem; padding-top: 1rem; border-top: 1px dashed var(--bd); }
+.pf-grp:first-of-type { border-top: 0; padding-top: 0; }
+.pf-grp > h4 { font-size: .98rem; font-weight: 700; color: var(--hc); margin-bottom: .5rem; }
+.pf-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+.pf-chips li { padding: .28rem .75rem; border-radius: 99px; border: 1px solid var(--bd); background: var(--bg2); color: var(--hc); font-size: .8rem; line-height: 1.4; }
+.pf-sub { margin: .8rem 0 .4rem; font-size: .78rem; font-weight: 600; letter-spacing: .02em; color: var(--mu); text-transform: uppercase; }
+.pf-sub i { margin-right: .4rem; color: var(--sky-d); }
+.pf-note { margin: .4rem 0 0; font-size: .8rem; color: var(--mu); }
+
+/* videos (language switch sits on top of each video block) */
+.pf-vhead { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; margin: .8rem 0 .5rem; }
+.pf-vhead .pf-sub { margin: 0; }
+.pf-vids { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .9rem; }
+.pf-v { min-width: 0; }
+.pf-v small { display: block; margin-bottom: .3rem; font-size: .75rem; color: var(--mu); font-weight: 600; }
+.pf-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #0f2239; border: 1px solid var(--bd); }
+.pf-frame iframe, .pf-frame img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+button.pf-frame { display: block; width: 100%; padding: 0; cursor: pointer; }
+.pf-play { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(15, 34, 57, .35); transition: background .25s; }
+.pf-play i { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: #e62117; color: #fff; font-size: 1.1rem; padding-left: 3px; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .6); transition: transform .25s; }
+button.pf-frame:hover .pf-play { background: rgba(15, 34, 57, .15); }
+button.pf-frame:hover .pf-play i { transform: scale(1.1); }
+button.pf-frame:focus-visible { outline: 3px solid var(--sky-d); outline-offset: 2px; }
+.pf-find { display: flex; align-items: center; gap: .7rem; padding: .75rem 1rem; border-radius: 12px; border: 1px dashed var(--bd); background: var(--bg2); color: var(--hc); text-decoration: none; font-size: .85rem; font-weight: 600; transition: border-color .25s, color .25s; }
+.pf-find i:first-child { color: #e62117; font-size: 1.2rem; }
+.pf-find:hover { border-color: var(--sky-d); color: var(--sky-d); }
+
+/* notes links */
+.pf-notes { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+.pf-notes a { display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .8rem; border-radius: 99px; border: 1px solid var(--bd); background: var(--card); color: var(--hc); font-size: .8rem; font-weight: 500; text-decoration: none; transition: border-color .25s, color .25s; }
+.pf-notes a i { color: var(--sky-d); font-size: .72rem; }
+.pf-notes a:hover { border-color: var(--sky-d); color: var(--sky-d); }
+
+/* =====================================================================
+   3. FLY DEVELOPER (extras on top of the site's #guide / #bub styles in theme.css)
+   ===================================================================== */
+/* ---------- Fly developer: extras on top of the site's #guide / #bub styles ---------- */
+#bub #bubTxt { display: inline; }
+#bub .pf-bn { display: flex; align-items: center; margin-top: .55rem; padding: .32rem .85rem; border: 0; border-radius: 99px; background: linear-gradient(135deg, var(--ac1, var(--sky)), var(--ac2, var(--sky-d))); color: #fff; font: 600 .75rem Poppins, system-ui, sans-serif; cursor: pointer; transition: transform .2s, box-shadow .25s; }
+#bub .pf-bn[hidden] { display: none; }
+#bub .pf-bn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px -6px var(--sky-d); }
+#bub .pf-bn:focus-visible, #dev:focus-visible { outline: 2px solid var(--sky-d); outline-offset: 2px; }
+#bub { pointer-events: auto; }
+#bub.hide { pointer-events: none; }
+
+/* ---------- projects, tips ---------- */
+.pf-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; max-width: 980px; margin: 0 auto; }
+.pf-two .card { padding: 1.4rem 1.6rem; }
+.pf-two h3 { font-size: 1.05rem; margin-bottom: .7rem; }
+.pf-two ol, .pf-two ul { margin: 0; padding-left: 1.2rem; color: var(--mu); font-size: .92rem; line-height: 1.8; }
+.pf-two li::marker { color: var(--sky-d); }
+
+/* =====================================================================
+   4. SMALL SCREENS
+   ===================================================================== */
+@media (max-width: 700px) {
+  .pf-hint { display: none; }
+  .pf-nav .btn { max-width: 49%; padding-left: 1rem; padding-right: 1rem; }
+}
+@media (max-width: 560px) {
+  .pf-lang button { padding: .3rem .65rem; }
+  .am-prog-in { flex-wrap: wrap; }
+  .pf-vids { grid-template-columns: 1fr; }
+  .pf-tab { font-size: .74rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf-lang button, .pf-play, .pf-play i, .pf-tab, .pf-circ, .pf-track, #bub .pf-bn { transition: none; }
+}
+
+@media (max-width: 900px) {
+  .am-hero { padding-top: 7rem; }
+  .am-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .am-banner { max-width: 34rem; }
+  .am-prog { top: 72px; }
+}
+@media (max-width: 700px) {
+  .am-step { grid-template-columns: 1fr; gap: .9rem; padding: 1.3rem; }
+  .am-num { width: 42px; height: 42px; font-size: 1.05rem; }
+  .am-sec { padding: 3rem 0; }
+  .am-about { padding: 1.5rem 1.3rem; }
+}
+@media (max-width: 560px) {
+  #amProgTxt { font-size: .78rem; }
+}
+@media (prefers-reduced-motion: reduce) { .am-bar i, .am-reset { transition: none; } }
+
+/* ---------- hero motivation line (typing animation) ---------- */
+.pf-type { display: flex; align-items: flex-start; gap: .7rem; max-width: 36rem; margin: 1.2rem 0 0; padding: .75rem 1rem; border-radius: 14px; border: 1px solid var(--bd); border-left: 4px solid var(--sky-d); background: var(--card); color: var(--hc); font: 600 .95rem/1.55 Poppins, system-ui, sans-serif; box-shadow: 0 10px 26px -18px color-mix(in srgb, var(--sky-d) 70%, transparent); }
+.pf-type-ic { flex: none; margin-top: .28rem; color: var(--sky-d); font-size: .9rem; }
+.pf-type-box { position: relative; display: block; min-width: 0; overflow-wrap: anywhere; }
+.pf-type-ghost { visibility: hidden; }
+.pf-type-live { position: absolute; inset: 0; }
+.pf-caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: text-bottom; background: var(--sky-d); animation: pfBlink 1s steps(1) infinite; }
+.pf-type-live + .pf-caret { position: absolute; }
+@keyframes pfBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (max-width: 560px) { .pf-type { font-size: .86rem; padding: .65rem .85rem; } }
+@media (prefers-reduced-motion: reduce) { .pf-caret { animation: none; } }
