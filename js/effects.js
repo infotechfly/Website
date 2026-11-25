@@ -25,6 +25,11 @@
       'These are the tools we build with.',
       'Four simple steps from idea to launch. Ask for a quote!'
     ],
+    projects: [
+      'Our projects: one of our own and one built for a client.',
+      'ITF Talk and Oceanrise Unicus. Tap Visit website to open them.',
+      'Want something like this? Tap Contact us.'
+    ],
     roadmaps: [
       'Search a topic like web dev or cybersec, then pick a roadmap.',
       'Cannot find a roadmap? Tell us what you want to learn.'
@@ -42,6 +47,7 @@
     index: 'Hi! I am your Fly developer. Scroll down and I will show you around.',
     about: 'This is the About page. Meet the team behind Info Tech Fly.',
     services: 'Welcome to Services! Tap any card for full details.',
+    projects: 'Projects! Here is what we have built and what we are building.',
     roadmaps: 'Roadmaps! Search any topic and start learning step by step.',
     roadmap: 'Here is the full roadmap. Follow it stage by stage.',
     contact: 'This is the Contact page. Send us a message anytime.'

@@ -14,6 +14,7 @@
     ["index.html", "Home"],
     ["about.html", "About"],
     ["services.html", "Services"],
+    ["projects.html", "Projects"],
     ["roadmaps.html", "Roadmaps"],
     ["contact.html", "Contact"],
   ];
