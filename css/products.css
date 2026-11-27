@@ -1,0 +1,4 @@
+/* Products page. Extra styles only; the card, image and status styles come from projects.css */
+.pr-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.pr-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.95rem;color:var(--mu)}
+.pr-list i{color:#10b981;margin-top:.3rem;font-size:.85rem}

@@ -30,6 +30,12 @@
       'ITF Talk and Oceanrise Unicus. Tap Visit website to open them.',
       'Want something like this? Tap Contact us.'
     ],
+    products: [
+      'Our products: ITF Meet for meetings and ITF Talk for live translation chat.',
+      'Tap Open to try ITF Meet or ITF Talk in your browser.',
+      'No download, no signup, private by default.',
+      'Want a product like this? Tap Contact us.'
+    ],
     roadmaps: [
       'Search a topic like web dev or cybersec, then pick a roadmap.',
       'Cannot find a roadmap? Tell us what you want to learn.'
@@ -48,6 +54,7 @@
     about: 'This is the About page. Meet the team behind Info Tech Fly.',
     services: 'Welcome to Services! Tap any card for full details.',
     projects: 'Projects! Here is what we have built and what we are building.',
+    products: 'Products! Try ITF Meet and ITF Talk right in your browser.',
     roadmaps: 'Roadmaps! Search any topic and start learning step by step.',
     roadmap: 'Here is the full roadmap. Follow it stage by stage.',
     contact: 'This is the Contact page. Send us a message anytime.'

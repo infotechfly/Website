@@ -10,5 +10,6 @@ Disallow: /*?q=
 Disallow: /*?cat=
 Disallow: /*?page=
 Disallow: /*?service=
+Disallow: /js/config.js
 
 Sitemap: https://www.infotechfly.com/sitemap.xml
